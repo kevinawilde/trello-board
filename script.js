@@ -15,11 +15,12 @@ function drop(ev) {
 function createPopover(){
 	document.getElementById('popup').style.display='block';
 }
-function deleteButton(parent){
-
+function deleteCard(e){
+	e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
 }
 function createTask(){
 	cardCount++
+
 	/*Create Card*/
 	var card = document.createElement('div');
 	card.setAttribute("draggable", "true");
@@ -60,7 +61,8 @@ function createTask(){
 
 	deleteButton.style.cssText = 'border-radius:10px; color: white; background-color: #d11a2a; padding:4px;';
 	deleteButton.setAttribute("href", "#");
-	deleteButton.setAttribute("onclick", "deleteCard()");
+	deleteButton.setAttribute("value", `taskCard${cardCount}`);
+	deleteButton.setAttribute("onclick", "deleteCard(this)");
 
 	card.appendChild(cardFooter);
 
