@@ -25,22 +25,27 @@ function createTask(){
 	card.id=`taskCard${cardCount}`
 	var taskName=document.getElementById("taskName").value;
 	var taskBody=document.getElementById("description").value;
-	/*card.style.cssText = 'position:absolute;width:100%;height:100%;opacity:0.3;z-index:100;background:#000';*/
+	card.style.cssText = 'background-color:#FFFFAA; box-shadow: 3px 3px 3px; margin-top:5px';
 	
 	/*Card Head*/
 	var cardHead = document.createElement('div');
 	var cardHeadText = document.createTextNode(taskName); 
-	cardHead.appendChild(cardHeadText);
+	var cardHeadElement =document.createElement('h4');
+	cardHeadElement.appendChild(cardHeadText);
+	cardHead.appendChild(cardHeadElement);
 	cardHead.className = 'card-header';
 	card.appendChild(cardHead);
 	/*Card Body*/
 	var cardBody = document.createElement('div');
-	
 	cardBody.className = 'card-body';
-	var cardBodyText = document.createTextNode(taskBody); 
-	cardBody.appendChild(cardBodyText);
+	var cardBodyText = document.createTextNode(taskBody);
+	var cardBodyElement =document.createElement('p');
+	cardBodyElement.appendChild(cardBodyText);
+	cardBody.appendChild(cardBodyElement); 
 	card.appendChild(cardBody);
 	document.getElementById('cards').appendChild(card);
+	document.getElementById('popup').style.display='none';
+	/*Card Footer*/
 
 }
 function cancelTask(){
