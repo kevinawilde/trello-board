@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="script.js"></script>
+
+
+</head>
+<body>
+	<section class="jumbotron">
+		<h1>Task List</h1>
+	</section>
+	<section class="container">
+		<a href="#" class="button" onclick="createPopover()">Create New Task</a>
+		<div class="card" id="popup">
+			<div class="card-header">
+				
+				<h3>Create Task</h3>
+
+			</div>
+			<div class="card-body">
+				<input type="" name="taskName" id="taskName"class="items">
+				<input type="" name="description"id="description"class="items">
+				
+			</div>
+			<div class="card-footer">
+				<a href="#" title=""onclick="cancelTask()">Cancel</a>
+				<a href="#"class="items" onclick="createTask()">Create Task</a>	
+			</div>
+				
+			
+
+		</div>
+	</section>
+	<section class="container-fluid" id="bodies">
+		<div class="row">
+			
+			<div id="onDeck" class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<h3>On Deck</h3>
+				<div id="cards">
+					
+				</div>
+				
+			</div>
+			<div id="inProgress"class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<h3>In Progress</h3>
+			</div>
+			<div id="staging"class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<h3>Staging</h3>
+			</div>
+			<div id="deployed"class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<h3>Deployed</h3>
+			</div>
+
+		</div>
+	</section>
+</body>
+</html>

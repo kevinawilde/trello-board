@@ -1,0 +1,25 @@
+#popup {
+position:absolute;
+display:none;
+background-color: #00c2e0;
+transform: translate(-50%, -50%);
+width:225px;
+height:225px;
+z-index: 1;
+}
+.items{
+
+}
+#onDeck{
+	background-color: #F0F0F0;
+	height: 100em;
+}
+#inProgress{
+	
+}
+#staging{
+	background-color: #F0F0F0;	
+}
+#deployed{
+	
+}
