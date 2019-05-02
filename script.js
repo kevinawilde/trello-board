@@ -15,6 +15,9 @@ function drop(ev) {
 function createPopover(){
 	document.getElementById('popup').style.display='block';
 }
+function deleteButton(parent){
+
+}
 function createTask(){
 	cardCount++
 	/*Create Card*/
@@ -35,6 +38,7 @@ function createTask(){
 	cardHead.appendChild(cardHeadElement);
 	cardHead.className = 'card-header';
 	card.appendChild(cardHead);
+
 	/*Card Body*/
 	var cardBody = document.createElement('div');
 	cardBody.className = 'card-body';
@@ -43,9 +47,26 @@ function createTask(){
 	cardBodyElement.appendChild(cardBodyText);
 	cardBody.appendChild(cardBodyElement); 
 	card.appendChild(cardBody);
+	
+	/*Card Footer*/
+	var cardFooter = document.createElement('div');
+	cardFooter.className = 'card-footer';
+	var deleteButton = document.createElement('a');
+	
+	var deleteText = document.createTextNode('DELETE'); 
+	deleteButton.appendChild(deleteText);
+	cardFooter.appendChild(deleteButton);
+
+
+	deleteButton.style.cssText = 'border-radius:10px; color: white; background-color: #d11a2a; padding:4px;';
+	deleteButton.setAttribute("href", "#");
+	deleteButton.setAttribute("onclick", "deleteCard()");
+
+	card.appendChild(cardFooter);
+
+
 	document.getElementById('cards').appendChild(card);
 	document.getElementById('popup').style.display='none';
-	/*Card Footer*/
 
 }
 function cancelTask(){
