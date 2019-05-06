@@ -137,3 +137,9 @@ function editList(){
 	document.getElementById("editListName").value = '';
 
 }
+function deleteList(){
+	var getIdValue = document.getElementById("valueHolder").value;
+	var toBeRemoved = document.getElementById(getIdValue);
+	toBeRemoved.parentElement.removeChild(toBeRemoved);
+	document.getElementById("editName").style.display = "none";
+}
