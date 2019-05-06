@@ -9,34 +9,66 @@ body{
 #popup {
 position:absolute;
 display:none;
-background-color: #00c2e0;
-transform: translate(-50%, -50%);
+background-color:  rgba(240, 240, 240,.8);
+left: 40%;
 width:225px;
 height:225px;
 z-index: 1;
 }
+#createListPopover{
+	position:absolute;
+	left: 40%;
+	display: none;
+	width:300px;
+	height:225px;
+	z-index: 1;
+}
+#createListPopoverBox{
+	background-color:  rgba(240, 240, 240,.8);
+}
 .col{
 	padding: 10px;
+	margin: 10px;
+	background-color:  rgba(240, 240, 240,.5);
+	border-radius: 5px;
+}
+#editName{
+	position:absolute;
+	display:none;
+	background-color:  rgba(240, 240, 240,.8);
+	left: 40%;
+	width:225px;
+	z-index: 1;
+}
+.newListButton{
+	padding-left: 5px;
+}
+#valueHolder{
+	display: none;
 }
 #jumbo{
-	background-color:  rgba(240, 240, 240,.5);
+	background-color:  rgba(41,143,202,.7);
 }
 .items{
 
 }
 #onDeck{
-	background-color:  rgba(240, 240, 240,.5);
-	border-radius: 5px;
-	margin: 3px;
+	
 }
 #inProgress{
-	margin: 3px;
+	
 }
 #staging{
-	background-color:  rgba(240, 240, 240,.5);
-	border-radius: 5px;
-	margin: 3px;
+	
 }
 #deployed{
-	margin: 3px;
+	
+}
+.createButtons{
+	border-radius:10px; 
+	color: white; 
+	background-color: rgb(41,143,202); 
+	padding:4px;
+	margin-left: 5px;
+	margin-right: 5px;
 }

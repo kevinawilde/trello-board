@@ -1,60 +1,109 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href="style.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="script.js"></script>
-
-
-</head>
-<body>
-	<section class="jumbotron" id="jumbo">
-		<h1>Task List</h1>
-	</section>
-	<section class="container">
-		<a href="#" class="button" onclick="createPopover()">Create New Task</a>
-		<div class="card" id="popup">
-			<div class="card-header">
-				
-				<h3>Create Task</h3>
-
-			</div>
-			<div class="card-body">
-				<input type="" name="taskName" id="taskName"class="items">
-				<input type="" name="description"id="description"class="items">
-				
-			</div>
-			<div class="card-footer">
-				<a href="#" title=""onclick="cancelTask()">Cancel</a>
-				<a href="#"class="items" onclick="createTask()">Create Task</a>	
-			</div>
-				
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	<body>
+		<section class="jumbotron row justify-content-center" id="jumbo">
+			<h1>Kello Tasks!</h1>
 			
-
-		</div>
-	</section>
-	<section class="container-fluid" id="bodies">
-		<div class="row">
+		</section>
+		<section class="justify-content-center">
+			<ul class="list-unstyled row justify-content-center" id="">
+				<li class="">
+					<a href="#" title="" onclick="createListPopover()"class="createButtons">Create List</a>
+				</li>
+				<li class="">
+					<a href="#" onclick="createPopover()"class="createButtons">Create New Task</a>
+				</li>
+			</ul>
+		</section>
+		<section class="container" id="createListPopover">
 			
-			<div id="onDeck" class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
-				<h3>On Deck</h3>
-				<div id="cards">
+			<div class="card" id="createListPopoverBox">
+				<div class="card-header">
+					
+					<h3>Create List</h3>
+				</div>
+				<div class="card-body">
+					<input type="" name="taskName" id="listName"class="items"placeholder="List Name">
 					
 				</div>
+				<div class="card-footer">
+					<a href="#" title=""onclick="cancelList()">Cancel</a>
+					<a href="#"class="items" onclick="createList()">Create List</a>
+				</div>
+				
 				
 			</div>
-			<div id="inProgress"class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
-				<h3>In Progress</h3>
+		</section>
+		<section class="container">
+			
+			<div class="card" id="popup">
+				<div class="card-header">
+					
+					<h3>Create Task</h3>
+				</div>
+				<div class="card-body">
+					<input type="" name="taskName" id="taskName"class="items"placeholder="Task Name">
+					<input type="" name="description"id="description"class="items"placeholder="Description"width="48" height="100">
+					
+				</div>
+				<div class="card-footer">
+					<a href="#" title=""onclick="cancelTask()">Cancel</a>
+					<a href="#"class="items" onclick="createTask()">Create Task</a>
+				</div>
+				
+				
 			</div>
-			<div id="staging"class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
-				<h3>Staging</h3>
-			</div>
-			<div id="deployed"class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
-				<h3>Deployed</h3>
-			</div>
-
+		</section>
+		<section class="container" >
+			
+			<div class="card" id="editName">
+				<div class="card-header">
+					<h3>Edit List</h3>
+				</div>
+				<div class="card-body">
+					<input type="" name="taskName" id="editListName"class="items"placeholder="Task Name">
+					<input id="valueHolder">
+					
+				</div>
+				<div class="card-footer">
+					<a href="#" title=""onclick="deleteList()">Delete</a>
+					<a href="#"class="items" onclick="editList()">Submit</a>
+					<a href="#"class="items" onclick="cancelListEdit()">Cancel</a>
+				</div>
+				
+				
+			</section>
 		</div>
-	</section>
-</body>
+		<section class="container-fluid" id="bodies">
+			<div class="row justify-content-around" id="lists">
+				
+				<div id="onDeck" class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
+					<h3>On Deck <a href="#" onclick="edit(this)"><img src="edit-icon.png" alt=""></a></h3>
+					
+					
+					<div id="cards">
+						
+					</div>
+					
+				</div>
+				<div id="inProgress"class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
+					<h3>In Progress <a href="#" onclick="edit(this)"><img src="edit-icon.png" alt=""></a></h3>
+					
+				</div>
+				<div id="staging"class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
+					<h3>Staging <a href="#" onclick="edit(this)"><img src="edit-icon.png" alt=""></a></h3>
+					
+				</div>
+				<div id="deployed"class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
+					<h3>Deployed <a href="#" onclick="edit(this)"><img src="edit-icon.png" alt=""></a></h3>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>
