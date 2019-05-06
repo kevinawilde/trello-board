@@ -1,4 +1,5 @@
 var cardCount = 1;
+var listCount = 1;
 
 function allowDrop(ev) {
  	ev.preventDefault();
@@ -75,9 +76,11 @@ function createTask(){
 
 }
 function createList(){
-	var row = document.getElementById("lists")
+	var row = document.getElementById("lists");
 	/*List Creation*/
 	var list = document.createElement('div');
+	list.id = `list${listCount}`;
+	listCount++;
 	list.className = 'col';
 	list.setAttribute("ondrop", "drop(event)");
 	list.setAttribute("ondragover", "allowDrop(event)");
@@ -129,10 +132,8 @@ function editList(){
 	var newListName = document.getElementById("editListName").value;
 	var valueId = document.getElementById(getIdValue);
 	document.getElementById("editListName").setAttribute("placeholder", valueId);
-	valueId.getElementsByTagName("h3")[0].innerHTML = newListName;
-
-
-}
-function cancelEditList(){
+	valueId.getElementsByTagName("h3")[0].innerHTML = `${newListName} <a href="#" onclick="edit(this)"><img src="edit-icon.png" alt=""></a>`;
+	document.getElementById("editName").style.display = "none";
+	document.getElementById("editListName").value = '';
 
 }
